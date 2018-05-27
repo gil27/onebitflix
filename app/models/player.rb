@@ -6,7 +6,7 @@ class Player < ApplicationRecord
 
   private
 
-  def​ set_start_date
-    self​.start_date ||= Time.zone.now
+  def set_start_date
+    self.start_date ||= Time.zone.now
   end
 end
