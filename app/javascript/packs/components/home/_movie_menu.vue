@@ -4,7 +4,7 @@
       <v-flex md10 offset-md1 xs7 offset-xs1 sm9 mt-4>
         <h4 class="title white--text" >{{ watchable.attributes.title }}</h4>
       </v-flex>
-
+      
       <v-flex md1 xs1 class="text-md-center" mt-4>
         <v-btn flat @click="close()">
           <v-icon color="white">clear</v-icon>
@@ -12,7 +12,7 @@
       </v-flex>
       <Details v-if="contentActive == 'details'" :watchable="watchable" />
       <!-- <Episodes v-if="contentActive == 'episodes'"/> -->
-      <!-- <Reviews v-if="contentActive == 'reviews'" /> -->
+      <Reviews v-if="contentActive == 'reviews'" :watchable="watchable" />
     </v-layout>
     <v-layout row wrap class="navigation">
       <v-flex md6>
@@ -31,11 +31,12 @@
       </v-flex>
     </v-layout>
   </div>
-
+  
 </template>
 
 <script>
   import Details from './_details.vue';
+  import Reviews from './_reviews.vue';
 
   // ------- Dados Fake apenas para testarmos o layout -------- //
   const watchable = {
@@ -66,7 +67,7 @@
       }
     },
     data () {
-      return {
+      return { 
         contentActive: 'details',
         watchable: watchable
       }
@@ -80,7 +81,8 @@
       }
     },
     components: {
-      Details: Details
+      Details: Details,
+      Reviews: Reviews
     }
   }
 </script>

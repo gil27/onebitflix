@@ -1,11 +1,11 @@
 <template>
   <v-toolbar color="black" dark>
     <v-layout row wrap>
-      <v-flex xs10 sm4>
-        <router-link to='/'>
-          <img :src='logo' class="logo"/>
-        </router-link>
-      </v-flex>
+       <v-flex xs10 sm4>
+          <router-link to="/">
+            <img :src='logo' class="logo"/>
+          </router-link>
+        </v-flex>
     </v-layout>
     <v-toolbar-items class="hidden-sm-and-down">
         <v-text-field
@@ -41,7 +41,7 @@
 <script>
   import Logo from '../../assets/logo.png';
   export default {
-    data () {
+    data () { 
       return {
         logo: Logo
       }
